@@ -30,7 +30,7 @@ You can see in the example, that I use Blender SVG icons in the code to spice up
 1. Update git submodules:
 
     ```sh
-    git submodule update
+    git submodule update --init --recursive
     ```
 
 2. Install node.js dependencies
