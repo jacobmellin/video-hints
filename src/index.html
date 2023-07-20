@@ -94,18 +94,26 @@
         font-weight:bold;
     }
 
+    .mouse::before {
+        background:rgba(0,0,0,0.3);
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
     .mouse-left::before {
         background-image: 
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="221" height="251" fill="none" style="-webkit-print-color-adjust:exact" viewBox="529 251 221 251"><defs><clipPath id="a" class="frame-clip-def frame-clip"><rect width="221" height="251" x="529" y="251" rx="0" ry="0" style="fill:%23fff;fill-opacity:1"/></clipPath></defs><g clip-path="url(%23a)"><g class="fills"></g><g class="frame-children"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="fills" style="fill:%23fff;fill-opacity:1"/><g class="strokes"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="fills"/><g class="strokes"><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="fills" style="fill:none;fill-opacity:1"/><g class="strokes"><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><rect width="17" height="36" x="631" y="294" class="fills" rx="8.5" ry="8.5" style="fill:%23fff;fill-opacity:1"/></g></g></svg>');
         content:'';
         position: relative;
-        width:28px;
+        width:32px;
         background-repeat: no-repeat;
-        height:28px;
+        height:32px;
         transform: scaleX(-1);
         display: inline-block;
-        background-size: 28px 28px;
-        bottom: -6px;
+        background-size: 24px 24px;
+        background-position: 50% 50%;
+        vertical-align: middle;
+        bottom:2px;
         margin-right:4px;
     }
 
@@ -208,7 +216,7 @@
         /* background:rgba(0,0,0,0.3); */
         line-height:34px;
         margin-bottom:5px;
-        margin-left:20px;
+        margin-left:10px;
         counter-increment: inst;
     }
   </style>
