@@ -13,7 +13,7 @@
             <li>Hit <span class="key shift">Shift</span> + <span class="key">A</span></span></li>
         <li>Choose <span class="option"><img class="icon" src="/blender-icons/blender-icons/outliner_ob_mesh.svg"/>Mesh</span> 🡪 <span class="option"><img class="icon" src="/blender-icons/blender-icons/mesh_plane.svg"/>Plane</span></li>
         </ol>
-    </div> -->
+    </div>
     <div class="hint" id="h2">
         <div class="top">Double Plane width</div>
         <ol class="steps">
@@ -76,9 +76,9 @@
     main {
         width:1920px;
         height:1080px;
-        /* background:gray; */
+        /* background:rgb(98, 98, 98); */
         position: relative;
-        border: 1px dashed black;
+        /* border: 1px dashed black; */
     }
     body {
         font-family: 'Clear Sans';
@@ -127,9 +127,9 @@
     }
     .key {
         /* display:inline; */
-        border: 2px solid rgba(255,255,255,0.7);
+        border: 2px solid rgba(255,255,255,0.4);
         border-radius:6px;
-        padding:0px 10px 4px 10px;
+        padding:0px 10px 6px 10px;
         background: rgba(0,0,0,0.3);
         position: relative;
         z-index: 2;
@@ -151,16 +151,16 @@
         display: inline;
     }
     .key::after {
-        border:1px solid white;
+        border:2px solid rgba(255,255,255,0.7);;
         position: absolute;
         content:'';
         display: inline-block;
-        top:-1.5px;
+        top:-0px;
         left:0;
         right:0;
-        bottom:2px;
-        border-radius: 6px;
-        z-index: -1;
+        bottom:3px;
+        border-radius: 4px;
+        z-index: 2;
     }
     .option {
         font-weight:700;
@@ -202,9 +202,9 @@
 
     tl.from('.top', {opacity: 0, x: 50, duration: 1, ease: "power2.out"}, 0);
     tl.from('.hint', { opacity: 0, y: 80, duration: 1, ease: Back.easeOut.config(1.7)}, 0);
-    tl.from('.steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 0.2}}, 0.25);
+    tl.from('.steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 2}}, 0.25);
 
-    tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 15);
+    tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 4);
 
     window.tl = tl;
 

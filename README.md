@@ -6,7 +6,7 @@ This project consists of a [Parcel.js](https://) Web App that contains tutorial 
 
 Example:
 
-*TODO*
+![Example image of the animated video hint](images/h2_small.gif)
 
 Hints are created in the [src/index.html](src/index.html) file in the following format:
 
@@ -25,7 +25,7 @@ Hints are created in the [src/index.html](src/index.html) file in the following 
 
 You can see in the example, that I use Blender SVG icons in the code to spice up the hints a bit.
 
-## How to run
+## How to generate videos
 
 1. Update git submodules:
 
@@ -36,6 +36,8 @@ You can see in the example, that I use Blender SVG icons in the code to spice up
 2. Install node.js dependencies
 
     ```sh
+    npm install
+    cd html5-animation-video-renderer
     npm install
     ```
 3. Run parcel webapp
