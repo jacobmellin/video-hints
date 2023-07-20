@@ -23,7 +23,7 @@ Hints are created in the [src/index.html](src/index.html) file in the following 
     </div>
 ```
 
-You can see in the example, that I use Blender SVG Icons 
+You can see in the example, that I use Blender SVG icons in the code to spice up the hints a bit.
 
 ## How to run
 
@@ -46,5 +46,6 @@ You can see in the example, that I use Blender SVG Icons
 
     Hints are now available under the URL [http://localhost:1234](http://localhost:1234). You can select specific hints to display using a location hash, for example:
 
-    [http://localhost:1234#h1](http://localhost:1234#h1) will display the hint with the HTML-ID `h1`.
-4. Run the `render.sh` script to render out videos. Videos will be placed in the `./out` directory.
+    [http://localhost:1234#h1](http://localhost:1234#h1) will display the hint with the HTML-ID `h1` (The element `<div class="hint" id="h1">...</div>`).
+4. Run the `render.sh` script to render out videos (Use Git Bash on Windows). Videos will be placed in the `./out` directory. By default, the script will render hints `h1` to `h5`. Edit `render.sh` to change the hints that you want to render.
+5. Use the `.mov` files in the `out` directory in your Video Editor. I use Blender VSE. Have fun! 😉
