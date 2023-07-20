@@ -47,5 +47,13 @@ You can see in the example, that I use Blender SVG icons in the code to spice up
     Hints are now available under the URL [http://localhost:1234](http://localhost:1234). You can select specific hints to display using a location hash, for example:
 
     [http://localhost:1234#h1](http://localhost:1234#h1) will display the hint with the HTML-ID `h1` (The element `<div class="hint" id="h1">...</div>`).
-4. Run the `render.sh` script to render out videos (Use Git Bash on Windows). Videos will be placed in the `./out` directory. By default, the script will render hints `h1` to `h5`. Edit `render.sh` to change the hints that you want to render.
+4. Run the `render.sh` script to render out videos (Use Git Bash on Windows). 
+Videos will be placed in the `./out` directory. By default, the script will render hints `h1` to `h5`. Edit `render.sh` to change the hints that you want to render.
+
+Alternatively, you can render specific hints using the following command:
+
+```sh
+    node html5-animation-video-renderer/render.js --url=http://localhost:1234\#h1--alpha --video=out/h1.mov
+```
+
 5. Use the `.mov` files in the `out` directory in your Video Editor. I use Blender VSE. Have fun! 😉
