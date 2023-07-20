@@ -6,7 +6,7 @@ This project consists of a [Parcel.js](https://) Web App that contains tutorial 
 
 Example:
 
-
+*TODO*
 
 Hints are created in the [src/index.html](src/index.html) file in the following format:
 
