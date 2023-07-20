@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <main class="screen">
+    <!-- <div class="hint" id="h1">
+        <div class="top">Add a Plane</div>
+        <ol class="steps">
+            <li>Hit <span class="key shift">Shift</span> + <span class="key">A</span></span></li>
+        <li>Choose <span class="option">Mesh</span> 🡪 <span class="option">Plane</span></li>
+        </ol>
+    </div> -->
+    <!-- <div class="hint" id="h2">
+        <div class="top">Double Plane width</div>
+        <ol class="steps">
+            <li>Select <strong>Plane</strong> in <span class="option">Object Mode</span></li>
+            <li>Hit <span class="key">S</span> to scale</li>
+            <li>Hit <span class="key">X</span> to limit scaling to X axis</li>
+            <li>Type <span class="key">2</span> to double plane width</li>
+            <li>Click <span class="mouse lmb">LMB</span> to confirm</li>
+        </ol>
+    </div> -->
+    <!-- <div class="hint" id="h2">
+        <div class="top">Divide plane along middle</div>
+        <ol class="steps">
+            <li>Enter <span class="option">Edit Mode</span> using <span class="key">TAB</span></li>
+            <li>Enable <span class="option">Face Select Mode</span> by hitting <span class="key">3</span></li>
+            <li>Select the Face to divide</li>
+            <li>Use <span class="key">CTRL</span> +  <span class="key">R</span> to start <span class="option">Loop Cut and Slide</span></li>
+            <li>Place the <span class="option">Loop Cut</span> by hovering and clicking <span class="mouse lmb">LMB</span>.</li>
+            <li>Optionally hit <span class="key">0</span> to center the new edge.</li>
+            <li>Click <span class="mouse lmb">LMB</span> to confirm</li>
+        </ol>
+    </div> -->
+    <!-- <div class="hint" id="h3">
+        <div class="top">Subdivide plane</div>
+        <ol class="steps">
+            <li>Enter <span class="option">Edit Mode</span> using <span class="key">TAB</span></li>
+            <li>Enable <span class="option">Face Select Mode</span> by hitting <span class="key">3</span></li>
+            <li>Hit <span class="key">A</span> to deselect/select all faces</li>
+            <li>Hit <span class="key">CTRL</span> +  <span class="key">E</span> and choose <span class="option">Subdivide</span></li>
+        </ol>
+    </div> -->
+    <!-- <div class="hint" id="h4">
+        <div class="top">Apply scale transform</div>
+        <ol class="steps">
+            <li>Ensure you are in the <span class="option">Layout Tab</span></li>
+            <li>Ensure <span class="option">Object Mode</span> is active (toggle using <span class="key">TAB</span>)</li>
+            <li>Hit <span class="key">CTRL</span> + <span class="key">A</span> and choose <span class="option">Scale</span> to apply scale transform.</li>
+        </ol>
+    </div> -->
+    <div class="hint" id="h5">
+        <div class="top">Create a stack of planes</div>
+        <ol class="steps">
+            <li>Ensure <span class="option"><img class="icon" src="/blender-icons/blender-icons/object_data.svg"/>Object Mode</span> is active (toggle using <span class="key">TAB</span>)</li>
+            <li>Select the base plane in the tree view</li>
+            <li>In the <span class="option"><img class="icon" src="/blender-icons/blender-icons/properties.svg"/>Properties Panel</span>, open the <span class="option"><img class="icon" src="/blender-icons/blender-icons/modifier.svg"/>Modifiers-Tab</span></li>
+            <li>Add an <span class="option"><img class="icon" src="/blender-icons/blender-icons/mod_array.svg"/>Array-Modifier</span></li>
+            <li>Exclusively enable <span class="option">Constant Offset</span> with a <strong>Z Distance</strong> of about <strong>0.05</strong></li>
+            <li>Increase the <span class="option">Count</span> value to something like <strong class="mono">15</strong></li>
+        </ol>
+    </div>
+    <!-- <div class="hint" id="h6">
+        <div class="top">Enable Render Preview in Shading Editor</div>
+        <ol class="steps">
+            <li>Hold <span class="key">Z</span> on the keyboard and choose <span class="option">Rendered</span>, or click <span class="option">...</span> at the top.</li>
+        </ol>
+    </div> -->
+  </main> 
+
+  <style>
+    main {
+        width:1920px;
+        height:1080px;
+        /* background:gray; */
+        position: relative;
+        border: 1px dashed black;
+    }
+    body {
+        font-family: 'Clear Sans';
+        margin:0;
+        color: white;
+    }
+
+    .mono {
+        /* font-family: monospace; */
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+        vertical-align: bottom;
+        background: rgba(0,0,0,0.3);
+        border-radius: 5px;
+        bottom:2px;
+        position: relative;
+        margin-right: 5px;
+    }
+
+    .hint {
+        bottom:200px;
+        left:50px;
+        position: absolute;
+        display:inline-block;
+        border-radius: 25px;
+        box-shadow: 4px 4px 20px rgba(0,0,0,0.4);
+        background: rgba(0,0,0,0.3);
+        font-size:22px;
+        padding:15px 30px 15px 15px;
+    }
+    .top {
+        font-weight:700;
+        padding:10px 20px;
+        background: rgba(0,0,0,0.3);
+        display:inline-block;
+        border-radius: 25px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+    .key {
+        font-weight:700;
+        /* text-transform: uppercase; */
+    }
+    .key {
+        /* display:inline; */
+        border: 2px solid white;
+        border-radius:6px;
+        padding:0px 10px 2px 10px;
+        background: rgba(0,0,0,0.1);
+    }
+    .key.shift::before {
+        background-image: 
+        url('data:image/svg+xml;utf8,<svg width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter" fill="none" color="%23FFFFFF"> <title id="shiftIconTitle">Shift</title> <path d="M16,12 L16,17 L8,17 L8,12 L3,12 L12,3 L21,12 L16,12 Z"/> </svg>');
+        content:'';
+        position: relative;
+        width:24px;
+        height:24px;
+        display: inline-block;
+        background-size: 24px 24px;
+        bottom: -6px;
+        margin-right:2px;
+    }
+    .option {
+        font-weight:700;
+        /* font-style: italic; */
+    }
+    .steps {
+        margin-top:1em;
+        text-indent: 0;
+        list-style: none;
+        padding:0;
+    }
+
+    .steps li::before {
+        content: counter(inst);
+        border-radius: 50%;
+        font-weight:900;
+        display:inline-block;
+        width:36px;
+        height:36px;
+        text-align: center;
+        margin-right:10px;
+        background:rgba(0,0,0,0.3);
+    }
+
+    .steps li {
+        /* background:rgba(0,0,0,0.3); */
+        line-height:34px;
+        margin-bottom:5px;
+        margin-left:20px;
+        counter-increment: inst;
+    }
+  </style>
+
+  <script type="module">
+    import { gsap, Back } from 'gsap';
+
+    let tl = gsap.timeline();
+    // tl.pause();
+
+    tl.from('.top', {opacity: 0, x: 50, duration: 1, ease: "power2.out"}, 0);
+    tl.from('.hint', { opacity: 0, y: 80, duration: 1, ease: Back.easeOut.config(1.7)}, 0);
+    tl.from('.steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 0.2}}, 0.25);
+
+    // tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 15);
+
+    window.tl = tl;
+
+    const config = {
+        fps: 60,
+        duration: tl.duration()
+    }
+
+
+    window.getInfo = function() {
+        return {
+            fps: config.fps,
+            numberOfFrames: config.duration*config.fps
+        }
+    }
+
+    window.seekToFrame = function(number) {
+        tl.pause();
+        tl.progress(number/(config.duration*config.fps));
+    }
+  </script>
+</body>
+</html>
