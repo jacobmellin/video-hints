@@ -1,4 +1,4 @@
-# HTML5 based video hints for Blender Tutorials
+# HTML5 based animated video hints for Blender Tutorials
 
 This project consists of a [Parcel.js](https://) Web App that contains tutorial hints designed using HTML and CSS and animated using [GSAP](https://) (such as instructions and keyboard shortcuts) that I used for this Blender Video Tutorial (Creating a colorful sliced landscape structure in Blender).
 
