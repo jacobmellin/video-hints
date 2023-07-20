@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-  <main class="screen">
+  <main class="screen" id="scene">
     <div class="hint" id="h1">
         <div class="top">Add a Plane</div>
         <ol class="steps">
@@ -204,7 +204,7 @@
     tl.from('.hint', { opacity: 0, y: 80, duration: 1, ease: Back.easeOut.config(1.7)}, 0);
     tl.from('.steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 0.2}}, 0.25);
 
-    // tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 15);
+    tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 15);
 
     window.tl = tl;
 

@@ -1,3 +1,6 @@
 [submodule "blender-icons"]
 	path = blender-icons
 	url = https://github.com/Shrinks99/blender-icons
+[submodule "html5-animation-video-renderer"]
+	path = html5-animation-video-renderer
+	url = https://github.com/dtinth/html5-animation-video-renderer
