@@ -21,7 +21,7 @@
             <li>Hit <span class="key">S</span> to scale</li>
             <li>Hit <span class="key">X</span> to limit scaling to X axis</li>
             <li>Type <span class="key">2</span> to double plane width</li>
-            <li>Click <span class="mouse lmb">LMB</span> to confirm</li>
+            <li>Click <span class="mouse mouse-left lmb">LMB</span> to confirm</li>
         </ol>
     </div>
     <div class="hint" id="h2">
@@ -88,6 +88,25 @@
 
     .mono {
         /* font-family: monospace; */
+    }
+
+    .lmb {
+        font-weight:bold;
+    }
+
+    .mouse-left::before {
+        background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="221" height="251" fill="none" style="-webkit-print-color-adjust:exact" viewBox="529 251 221 251"><defs><clipPath id="a" class="frame-clip-def frame-clip"><rect width="221" height="251" x="529" y="251" rx="0" ry="0" style="fill:%23fff;fill-opacity:1"/></clipPath></defs><g clip-path="url(%23a)"><g class="fills"></g><g class="frame-children"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="fills" style="fill:%23fff;fill-opacity:1"/><g class="strokes"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="fills"/><g class="strokes"><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="fills" style="fill:none;fill-opacity:1"/><g class="strokes"><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><rect width="17" height="36" x="631" y="294" class="fills" rx="8.5" ry="8.5" style="fill:%23fff;fill-opacity:1"/></g></g></svg>');
+        content:'';
+        position: relative;
+        width:28px;
+        background-repeat: no-repeat;
+        height:28px;
+        transform: scaleX(-1);
+        display: inline-block;
+        background-size: 28px 28px;
+        bottom: -6px;
+        margin-right:4px;
     }
 
     .icon {
@@ -204,7 +223,7 @@
     tl.from('.hint', { opacity: 0, y: 80, duration: 1, ease: Back.easeOut.config(1.7)}, 0);
     tl.from('.steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 2}}, 0.25);
 
-    tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 4);
+    // tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 4);
 
     window.tl = tl;
 
