@@ -24,11 +24,11 @@
             <li>Click <span class="mouse mouse-left lmb">LMB</span> to confirm</li>
         </ol>
     </div>
-    <div class="hint" id="h2">
+    <div class="hint" id="h7">
         <div class="top">Divide plane along middle</div>
         <ol class="steps">
-            <li>Enter <span class="option">Edit Mode</span> using <span class="key tab">TAB</span></li>
-            <li>Enable <span class="option">Face Select Mode</span> by hitting <span class="key">3</span></li>
+            <li>Enter <span class="option"><img class="icon" src="/blender-icons/blender-icons/editmode_hlt.svg"/>Edit Mode</span> using <span class="key tab">TAB</span></li>
+            <li>Enable <span class="option"><img class="icon" src="/blender-icons/blender-icons/face_select.svg"/>Face Select Mode</span> by hitting <span class="key">3</span></li>
             <li>Select the Face to divide</li>
             <li>Use <span class="key">CTRL</span> +  <span class="key">R</span> to start <span class="option">Loop Cut and Slide</span></li>
             <li>Place the <span class="option">Loop Cut</span> by hovering and clicking <span class="mouse lmb">LMB</span>.</li>
@@ -70,6 +70,108 @@
             <li>Hold <span class="key">Z</span> and choose <span class="option"><img class="icon" src="/blender-icons/blender-icons/shading_rendered.svg"/>Rendered</span>, or click <span class="option"><img class="icon" src="/blender-icons/blender-icons/shading_rendered.svg"/></span> at the top right.</li>
         </ol>
     </div>
+    <div class="hint" id="h9">
+        <div class="top">Slice landscape</div>
+        <ol class="steps">
+            <li>Select the <em>Landscape</em> element</li>
+            <li>In <span class="option"><img class="icon" src="/blender-icons/blender-icons/properties.svg"/>Properties</span> 🡪 <span class="option"><img class="icon" src="/blender-icons/blender-icons/modifier.svg"/>Modifiers</span>, add a <span class="option"><img class="icon" src="/blender-icons/blender-icons/mod_boolean.svg"/>Boolean-Modifier</span></li>
+            <li>For the <span class="option"><img class="icon" src="/blender-icons/blender-icons/object_data.svg"/>Object</span> value, choose the <em>SlicingRef</em> element</li>
+            <li>Set the <strong>Solver</strong> option to <em>Fast</em></li>
+        </ol>
+    </div>
+    <div class="hint" id="h10">
+        <div class="top">Move up the planes</div>
+        <ol class="steps">
+            <li>Select the <em>SlicingRef</em> element</li>
+            <li>Hit <span class="key">N</span> to toggle the sidebar and open <span class="option">Transform</span></li>
+            <li>Enter something like <strong>0.05</strong> to move up the planes</li>
+        </ol>
+    </div>
+    <div class="hint" id="h11">
+        <div class="top">Enable Alpha (Eevee) for landscape material</div>
+        <ol class="steps">
+            <li>Ensure the <em>Landscape</em> element is selected</li>
+            <li>In the <span class="option"><img class="icon" src="/blender-icons/blender-icons/properties.svg"/>Properties</span> panel, open <span class="option"><img class="icon" src="/blender-icons/blender-icons/material.svg"/>Material</span></li>
+            <li>Set <span class="option">Settings</span> 🡪 <span class="option">Blend mode</span> to <em>Alpha Hashed</em></li>
+        </ol>
+    </div>
+    <div class="hint" id="h12">
+        <div class="top">Add a gradient reference plane</div>
+        <ol class="steps">
+            <li>In the <span class="option">Layout</span> tab, hit <span class="key">NUM 7</span> to go to top view</li>
+            <li>Add a plane and scale it to cover the landscape (<span class="key">S</span>,<span class="key">X</span>)</li>
+            <li>Place the plane above the landscape on the Z axis (<span class="key">G</span>,<span class="key">Z</span>)</li>
+        </ol>
+    </div>
+    <div class="hint" id="h13">
+        <div class="top">Get plane object coordinates in material</div>
+        <ol class="steps">
+            <li>In the <span class="option">Shading</span> tab, create a new material for the landscape</li>
+            <li>Select the top plane, name it GradientRef and assign the same material</li>
+            <li>In the <span class="option"><img class="icon" src="/blender-icons/blender-icons/node_material.svg"/>Shader Editor</span>, create a <span class="option">Texture Coordinate</span> node</li>
+            <li>Place the plane above the landscape on the Z axis (<span class="key">G</span>,<span class="key">Z</span>)</li>
+            <li>For the <span class="option"><img class="icon" src="/blender-icons/blender-icons/object_data.svg"/>Object</span> value, choose the <em>GradientRef</em> element</li>
+        </ol>
+    </div>
+    <div class="hint" id="h14">
+        <div class="top">Add a basic gradient</div>
+        <ol class="steps">
+            <li>Plug the <span class="option">Object</span> output of the <span class="option">Texture Coordinate</span> node <br>into the <span class="option">Vector</span> input of a new <span class="option">Gradient Texture</span> node</li>
+            <li>Plug the <span class="option">Color</span> output into the shader's <span class="option">Emission</span> input</li>
+        </ol>
+    </div>
+    <div class="hint" id="h15">
+        <div class="top">Color the gradient</div>
+        <ol class="steps">
+            <li>Add a <span class="option">Color Ramp</span> node</li>
+            <li>Plug the <span class="option">Factor</span> output of the Gradient Texture <br>into the <span class="option">Color</span> input of the Color Ramp</li>
+            <li>Plug the <span class="option">Color</span> output into <span class="option">Emission</span></li>
+            <li>Adjust the Color Ramp to your liking</li>
+        </ol>
+    </div>
+    <div class="hint" id="h16">
+        <div class="top">Create a background ramp</div>
+        <ol class="steps">
+            <li>In the <span class="option">Layout</span> tab, go to <span class="option"><img class="icon" src="/blender-icons/blender-icons/object_data.svg"/>Object Mode</span></li>
+            <li>Create a new plane (<span class="key shift"></span>+<span class="key">A</span>, <span class="option"><img class="icon" src="/blender-icons/blender-icons/outliner_ob_mesh.svg"/>Mesh</span> 🡪 <span class="option"><img class="icon" src="/blender-icons/blender-icons/mesh_plane.svg"/>Plane</span>)</li>
+            <li>Scale the plane to be very large (<span class="key">S</span>)</li>
+            <li>Enter <span class="option"><img class="icon" src="/blender-icons/blender-icons/editmode_hlt.svg"/>Edit Mode</span> (<span class="key tab">TAB</span>) and <span class="option"><img class="icon" src="/blender-icons/blender-icons/edge_select.svg"/>Edge Select Mode (<span class="key">2</span>)</span></li>
+            <li>Extrude the back Edge along the Y axis (<span class="key">E</span>, <span class="key">Y</span>, <span class="mouse mouse-left lmb">LMB</span>)</li>
+            <li>Move the new back edge upwards (<span class="key">G</span>, <span class="key">Z</span>, <span class="mouse mouse-left lmb">LMB</span>)</li>
+            <li>Select the middle edge and hit <span class="key">CTRL</span> +  <span class="key">B</span> to bevel.</li>
+            <li>Use <span class="option">Mouse Scroll Wheel</span> to increase segments</li>
+            <li>Click <span class="mouse mouse-left lmb">LMB</span> to confirm</li>
+        </ol>
+    </div>
+
+    <div class="hint" id="h17">
+        <div class="top">Lock Camera to view</div>
+        <ol class="steps">
+            <li>In the <span class="option">Layout</span> tab, hit <span class="key">NUM 0</span> to look through camera</li>
+            <li>Toggle the sidebar using <span class="key">N</span></li>
+            <li>Enable <strong>Lock camera to view</strong></li>
+        </ol>
+    </div>
+
+    <div class="hint" id="h18">
+        <div class="top">Hide reference objects in render</div>
+        <ol class="steps">
+            <li>In the <span class="option"><img class="icon" src="/blender-icons/blender-icons/outliner.svg"/>Outliner</span>, open the <span class="option"><img class="icon" src="/blender-icons/blender-icons/filter.svg"/>Filter Menu</span></li>
+            <li>Ensure the <span class="option"><img class="icon" src="/blender-icons/blender-icons/restrict_render_off.svg"/>Disable in renders</span> restriction toggle is <strong>enabled</strong></li>
+            <li>Set the <span class="option"><img class="icon" src="/blender-icons/blender-icons/restrict_render_off.svg"/> Disable in renders</span> to <img class="icon" src="/blender-icons/blender-icons/restrict_render_on.svg"/> for <em>GradientRef</em> and <em>SlicingRef</em></li>
+        </ol>
+    </div>
+
+    <div class="vidref" id="h19">
+        <div>
+            <div class="title">How to Create Topographic Maps with Blender</div>
+            <div class="channel">Architechture Topics</div>
+        </div>
+    </div>
+
+    <div class="info" id="h20">
+        Meine info
+    </div>
   </main> 
 
   <style>
@@ -90,19 +192,19 @@
         /* font-family: monospace; */
     }
 
-    .lmb {
+    .mouse {
         font-weight:bold;
     }
 
     .mouse::before {
-        background:rgba(0,0,0,0.3);
+        background: rgba(255, 255, 255, 0.8);
         border-radius: 3px;
         box-sizing: border-box;
     }
 
     .mouse-left::before {
         background-image: 
-        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="221" height="251" fill="none" style="-webkit-print-color-adjust:exact" viewBox="529 251 221 251"><defs><clipPath id="a" class="frame-clip-def frame-clip"><rect width="221" height="251" x="529" y="251" rx="0" ry="0" style="fill:%23fff;fill-opacity:1"/></clipPath></defs><g clip-path="url(%23a)"><g class="fills"></g><g class="frame-children"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="fills" style="fill:%23fff;fill-opacity:1"/><g class="strokes"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="fills"/><g class="strokes"><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="fills" style="fill:none;fill-opacity:1"/><g class="strokes"><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23fff;stroke-opacity:1"/></g><rect width="17" height="36" x="631" y="294" class="fills" rx="8.5" ry="8.5" style="fill:%23fff;fill-opacity:1"/></g></g></svg>');
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="221" height="251" fill="none" style="-webkit-print-color-adjust:exact" viewBox="529 251 221 251"><defs><clipPath id="a" class="frame-clip-def frame-clip"><rect width="221" height="251" x="529" y="251" rx="0" ry="0" style="fill:%23444;fill-opacity:1"/></clipPath></defs><g clip-path="url(%23a)"><g class="fills"></g><g class="frame-children"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="fills" style="fill:%23444;fill-opacity:1"/><g class="strokes"><path d="M652 342.704V355h90c-.002-52.679-40.248-95.504-90-96v23.296c8.827 3.124 15.158 11.549 15.158 21.441v17.526c0 9.892-6.331 18.317-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23444;stroke-opacity:1"/></g><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="fills"/><g class="strokes"><path d="M610.842 303.737v17.526c0 9.892 6.331 18.317 15.158 21.441V355h-90c0-52.678 40.247-95.504 90-96v23.296c-8.827 3.124-15.158 11.549-15.158 21.441Z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23444;stroke-opacity:1"/></g><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="fills" style="fill:none;fill-opacity:1"/><g class="strokes"><path d="M536 379h207v92a20 20 0 0 1-20 20H556a20 20 0 0 1-20-20v-92z" class="stroke-shape" style="fill:none;fill-opacity:none;stroke-width:10;stroke:%23444;stroke-opacity:1"/></g><rect width="17" height="36" x="631" y="294" class="fills" rx="8.5" ry="8.5" style="fill:%23444;fill-opacity:1"/></g></g></svg>');
         content:'';
         position: relative;
         width:32px;
@@ -130,16 +232,53 @@
 
     .hint {
         bottom:200px;
-        left:50px;
+        left:60px;
         position: absolute;
         display:inline-block;
-        display: none;
         border-radius: 25px;
         box-shadow: 4px 4px 20px rgba(0,0,0,0.4);
         background: rgba(89, 89, 89, 0.7);
         font-size:22px;
         padding:15px 30px 15px 15px;
     }
+
+    .vidref {
+        display: flex;
+        flex-direction: row;
+        bottom:200px;
+        left:60px;
+        position: absolute;
+        border-radius: 25px;
+        box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+        background: rgba(0, 0, 0, 0.8);
+        font-size:22px;
+        padding: 18px 24px 24px;
+        white-space: nowrap;
+        padding-left:140px;
+        overflow:hidden;
+        line-height: 1.2em;
+    }
+
+    .vidref .title {
+        font-weight: bold;
+    }
+
+    .vidref .channel {
+        font-style: italic;
+    }
+
+    .vidref::before {
+        display: flex;
+        content:'';
+        width:100px;
+        height:60px;
+        left:24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="159" height="110"><path d="m154 17.5c-1.82-6.73-7.07-12-13.8-13.8-9.04-3.49-96.6-5.2-122 0.1-6.73 1.82-12 7.07-13.8 13.8-4.08 17.9-4.39 56.6 0.1 74.9 1.82 6.73 7.07 12 13.8 13.8 17.9 4.12 103 4.7 122 0 6.73-1.82 12-7.07 13.8-13.8 4.35-19.5 4.66-55.8-0.1-75z" fill="%23f00"/><path d="m105 55-40.8-23.4v46.8z" fill="%23fff"/></svg>');
+    }
+
     .top {
         font-weight:700;
         padding:10px 20px;
@@ -154,16 +293,17 @@
     }
     .key {
         /* display:inline; */
-        border: 2px solid rgba(255,255,255,0.4);
+        /* border: 2px solid rgba(255,255,255,0.4); */
         border-radius:6px;
-        padding:0px 10px 6px 10px;
-        background: rgba(0,0,0,0.3);
+        padding:0px 10px 3px 10px;
+        background: rgba(255, 255, 255, 0.8);
         position: relative;
         z-index: 2;
+        color:rgb(41, 41, 41);
     }
     .key.shift::before {
         background-image: 
-        url('data:image/svg+xml;utf8,<svg width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" stroke="%23FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter" fill="none" color="%23FFFFFF"> <title id="shiftIconTitle">Shift</title> <path d="M16,12 L16,17 L8,17 L8,12 L3,12 L12,3 L21,12 L16,12 Z"/> </svg>');
+        url('data:image/svg+xml;utf8,<svg width="800px" height="800px" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg" stroke="%23414141" stroke-width="2" stroke-linecap="round" stroke-linejoin="miter" fill="none" color="%23414141"> <title id="shiftIconTitle">Shift</title> <path d="M16,12 L16,17 L8,17 L8,12 L3,12 L12,3 L21,12 L16,12 Z"/> </svg>');
         content:'';
         position: relative;
         width:24px;
@@ -177,18 +317,18 @@
         content:'⭾ ';
         display: inline;
     }
-    .key::after {
+    /* .key::after {
         border:2px solid rgba(255,255,255,0.7);;
         position: absolute;
         content:'';
         display: inline-block;
-        top:-0px;
-        left:0;
-        right:0;
+        top:-1px;
+        left:-1px;
+        right:-1px;
         bottom:3px;
         border-radius: 4px;
         z-index: 2;
-    }
+    } */
     .option {
         font-weight:700;
         /* font-style: italic; */
@@ -224,14 +364,41 @@
   <script type="module">
     import { gsap, Back } from 'gsap';
 
+    import CSSRulePlugin from 'gsap/CSSRulePlugin';
+
+    document.querySelectorAll('.hint, .vidref, .info').forEach(el => {
+        if(('#' + el.id) === window.location.hash) {
+            el.style.visibility = 'visible';
+        }
+        else {
+            el.style.visibility = 'hidden';
+        }
+    });
+
+
+    // document.querySelectorAll('.vidref').forEach(el => {
+    //     if('#' + el.id === window.location.hash) {
+    //         el.style.display = 'flex';
+    //     }
+    //     else {
+    //         el.style.display = 'none';
+    //     }
+    // });
+
     let tl = gsap.timeline();
     // tl.pause();
 
     tl.from('.top', {opacity: 0, x: 50, duration: 1, ease: "power2.out"}, 0);
     tl.from('.hint', { opacity: 0, y: 80, duration: 1, ease: Back.easeOut.config(1.7)}, 0);
-    tl.from('.steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 2}}, 0.25);
+    tl.from(window.location.hash + ' .steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 0.4}}, 0.25);
 
-    // tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 4);
+    tl.to('.hint', {opacity:0, y:50, duration:1, ease: "power2.in"}, 15);
+
+    tl.from('.vidref', {opacity:0, width: 0, duration:1, ease:"power2.out"}, 0);
+
+    let vidrefBefore = CSSRulePlugin.getRule(".vidref::before"); //get the rule
+    tl.fromTo(vidrefBefore, {scale: 2, duration:1, ease:Back.easeOut.config(1.7)}, {scale:1}, 0)
+    tl.to('.vidref', {width:0, duration:1, opacity:0, ease:"power2.in"}, 15);
 
     window.tl = tl;
 
@@ -253,7 +420,6 @@
         tl.progress(number/(config.duration*config.fps));
     }
 
-    document.querySelector(window.location.hash).style.display = 'inline-block';
   </script>
 </body>
 </html>

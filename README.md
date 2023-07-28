@@ -2,7 +2,7 @@
 
 This project consists of a simple webapp that is built using [Parcel.js](https://parceljs.org/) and that contains tutorial hints designed using HTML and CSS and animated using [GSAP](https://greensock.com/gsap/) (such as instructions and keyboard shortcuts). I built it to create video hints for this Blender Video Tutorial (Creating a colorful sliced landscape structure in Blender).
 
-[html5-animation-video-renderer](https://github.com/dtinth/html5-animation-video-renderer) is used to render the animated hints to `.mov` files. They can than be imported into a video editor and placed above the screen recording.
+[html5-animation-video-renderer](https://github.com/dtinth/html5-animation-video-renderer) is used to render the animated hints to `.mov` files with alpha. They can than be imported into a video editor and placed above the screen recording.
 
 Example:
 
@@ -39,6 +39,7 @@ You can see in the example, that I use Blender SVG icons in the code to spice up
     npm install
     cd html5-animation-video-renderer
     npm install
+    cd ..
     ```
 3. Run parcel webapp
 
@@ -52,10 +53,10 @@ You can see in the example, that I use Blender SVG icons in the code to spice up
 4. Run the `render.sh` script to render out videos (Use Git Bash on Windows). 
 Videos will be placed in the `./out` directory. By default, the script will render hints `h1` to `h5`. Edit `render.sh` to change the hints that you want to render.
 
-Alternatively, you can render specific hints using the following command:
+    Alternatively, you can render specific hints using the following command:
 
-```sh
-    node html5-animation-video-renderer/render.js --url=http://localhost:1234\#h1--alpha --video=out/h1.mov
-```
+    ```sh
+        node html5-animation-video-renderer/render.js --url=http://localhost:1234#h1--alpha --video=out/h1.mov
+    ```
 
 5. Use the `.mov` files in the `out` directory in your Video Editor. I use Blender VSE. Have fun! 😉
