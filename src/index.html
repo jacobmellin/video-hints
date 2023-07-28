@@ -170,7 +170,28 @@
     </div>
 
     <div class="info" id="h20">
-        Meine info
+        To reduce noise, go to <span class="option"><img class="icon" src="/blender-icons/blender-icons/properties.svg"/>Properties</span> 🡪 <span class="option"><img class="icon" src="/blender-icons/blender-icons/scene.svg"/>Render Settings</span> <br> and increase the <span class="option">Viewport Samples</span> under <span class="option">Sampling</span>
+    </div>
+
+    <div class="info" id="h21">
+        To be able to edit the landscape, go into <span class="option"><img class="icon" src="/blender-icons/blender-icons/object_data.svg"/>Object Mode</span>,<br> select the <em>Landscape</em> element, then go into <span class="option"><img class="icon" src="/blender-icons/blender-icons/properties.svg"/>Properties</span> 🡪 <span class="option"><img class="icon" src="/blender-icons/blender-icons/modifier.svg"/>Modifiers</span><br> and disable <span class="option"><img class="icon" src="/blender-icons/blender-icons/restrict_view_off.svg"/>Display modifier in viewport</span> for both modifiers. <br>
+        Then edit the landscape in <span class="option"><img class="icon" src="/blender-icons/blender-icons/sculptmode_hlt.svg"/>Sculpt Mode</span> (Sculpt Tab).
+    </div>
+
+    <div class="info" id="h22">
+        Enable <strong>Bloom</strong> in the <span class="option"><img class="icon" src="/blender-icons/blender-icons/scene.svg"/>Render Settings</span> to get a nice glow.
+    </div>
+
+    <div class="info" id="h23">
+        Add a <span class="option"><img class="icon" src="/blender-icons/blender-icons/mod_solidify.svg"/>Solidify</span> modifier to the <em>Landscape</em> to give the slices some thickness.
+    </div>
+
+    <div class="info" id="h24">
+        Enable <strong>Ambient Occlusion</strong> in the <span class="option"><img class="icon" src="/blender-icons/blender-icons/scene.svg"/>Render Settings</span><br>to emulate shadows from ambient light (Eevee).
+    </div>
+
+    <div class="info" id="h25">
+        With a <span class="option">Light</span> selected, go into <span class="option"><img class="icon" src="/blender-icons/blender-icons/properties.svg"/>Properties</span> 🡪 <span class="option"><img class="icon" src="/blender-icons/blender-icons/light.svg"/>Light</span><br>and enable <span class="option">Contact Shadows</span> to get more defined shadows (Eevee).
     </div>
   </main> 
 
@@ -237,10 +258,12 @@
         display:inline-block;
         border-radius: 25px;
         box-shadow: 4px 4px 20px rgba(0,0,0,0.4);
-        background: rgba(89, 89, 89, 0.7);
+        background: rgba(89, 89, 89, 0.9);
         font-size:22px;
         padding:15px 30px 15px 15px;
     }
+
+
 
     .vidref {
         display: flex;
@@ -279,14 +302,65 @@
         background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="159" height="110"><path d="m154 17.5c-1.82-6.73-7.07-12-13.8-13.8-9.04-3.49-96.6-5.2-122 0.1-6.73 1.82-12 7.07-13.8 13.8-4.08 17.9-4.39 56.6 0.1 74.9 1.82 6.73 7.07 12 13.8 13.8 17.9 4.12 103 4.7 122 0 6.73-1.82 12-7.07 13.8-13.8 4.35-19.5 4.66-55.8-0.1-75z" fill="%23f00"/><path d="m105 55-40.8-23.4v46.8z" fill="%23fff"/></svg>');
     }
 
+    .info {
+        display: block;
+        /* flex-direction: row; */
+        bottom:200px;
+        left:60px;
+        position: absolute;
+        border-radius: 25px;
+        box-shadow: 4px 4px 20px rgba(0,0,0,0.2);
+        background: rgba(0, 0, 0, 0.8);
+        font-size:22px;
+        padding: 18px 24px 24px;
+        white-space: nowrap;
+        padding-left:80px;
+        overflow:hidden;
+        /* line-height: 1.2em; */
+    }
+
+    .info img {
+        position: relative;
+        top:2px;
+    }
+
+    .info::before {
+        display: flex;
+        content:'';
+        width:35px;
+        height:60px;
+        left:24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        background-image: url('data:image/svg+xml;utf8,<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" fill="%23FFF" clip-rule="evenodd"><path d="M24 17.981h-13l-7 5.02v-5.02h-4v-16.981h24v16.981zm-2-14.981h-20v12.981h4v3.125l4.357-3.125h11.643v-12.981zm-9 6.001v5h-2v-5h2zm-1-1.5c.69 0 1.25-.56 1.25-1.25s-.56-1.25-1.25-1.25-1.25.56-1.25 1.25.56 1.25 1.25 1.25z"/></svg>');
+    }
+
     .top {
         font-weight:700;
         padding:10px 20px;
         background: rgba(0,0,0,0.3);
-        display:inline-block;
+        display:inline;
         border-radius: 25px;
-        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        /* box-shadow: 2px 2px 10px rgba(0,0,0,0.3); */
+        vertical-align:middle;
+        position: relative;
     }
+
+    .hint .top::before {
+        display: inline-block;
+        content:'';
+        width:36px;
+        height:36px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        top:9px;
+        margin-right:5px;
+        /* position: absolute; */
+        background-image: url('data:image/svg+xml;utf8,<svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" fill="%23FFF" xmlns="http://www.w3.org/2000/svg"><path d="m21 4c0-.478-.379-1-1-1h-16c-.62 0-1 .519-1 1v16c0 .621.52 1 1 1h16c.478 0 1-.379 1-1zm-16.5.5h15v15h-15zm13.5 10.75c0-.414-.336-.75-.75-.75h-4.5c-.414 0-.75.336-.75.75s.336.75.75.75h4.5c.414 0 .75-.336.75-.75zm-11.772-.537 1.25 1.114c.13.116.293.173.455.173.185 0 .37-.075.504-.222l2.116-2.313c.12-.131.179-.296.179-.459 0-.375-.303-.682-.684-.682-.185 0-.368.074-.504.221l-1.66 1.815-.746-.665c-.131-.116-.293-.173-.455-.173-.379 0-.683.307-.683.682 0 .188.077.374.228.509zm11.772-2.711c0-.414-.336-.75-.75-.75h-4.5c-.414 0-.75.336-.75.75s.336.75.75.75h4.5c.414 0 .75-.336.75-.75zm-11.772-1.613 1.25 1.114c.13.116.293.173.455.173.185 0 .37-.074.504-.221l2.116-2.313c.12-.131.179-.296.179-.46 0-.374-.303-.682-.684-.682-.185 0-.368.074-.504.221l-1.66 1.815-.746-.664c-.131-.116-.293-.173-.455-.173-.379 0-.683.306-.683.682 0 .187.077.374.228.509zm11.772-1.639c0-.414-.336-.75-.75-.75h-4.5c-.414 0-.75.336-.75.75s.336.75.75.75h4.5c.414 0 .75-.336.75-.75z"/></svg>');
+    }
+
     .key {
         font-weight:700;
         /* text-transform: uppercase; */
@@ -345,18 +419,21 @@
         border-radius: 50%;
         font-weight:900;
         display:inline-block;
+        position: absolute;
+        left:-45px;
         width:36px;
         height:36px;
         text-align: center;
-        margin-right:10px;
+        /* margin-right:10px; */
         background:rgba(0,0,0,0.3);
     }
 
     .steps li {
         /* background:rgba(0,0,0,0.3); */
         line-height:34px;
-        margin-bottom:5px;
-        margin-left:10px;
+        margin-bottom:10px;
+        margin-left:50px;
+        position: relative;
         counter-increment: inst;
     }
   </style>
@@ -389,6 +466,10 @@
     // tl.pause();
 
     tl.from('.top', {opacity: 0, x: 50, duration: 1, ease: "power2.out"}, 0);
+    
+    let topBefore = CSSRulePlugin.getRule(".hint .top::before"); //get the rule
+    tl.fromTo(topBefore, {scale: 2, duration:1, ease:"power2.out"}, {scale:1}, 0);
+
     tl.from('.hint', { opacity: 0, y: 80, duration: 1, ease: Back.easeOut.config(1.7)}, 0);
     tl.from(window.location.hash + ' .steps li', {opacity: 0, x:30, duration: 1, stagger: { amount: 0.4}}, 0.25);
 
@@ -397,8 +478,14 @@
     tl.from('.vidref', {opacity:0, width: 0, duration:1, ease:"power2.out"}, 0);
 
     let vidrefBefore = CSSRulePlugin.getRule(".vidref::before"); //get the rule
-    tl.fromTo(vidrefBefore, {scale: 2, duration:1, ease:Back.easeOut.config(1.7)}, {scale:1}, 0)
+    tl.fromTo(vidrefBefore, {scale: 2, duration:1, ease:Back.easeOut.config(1.7)}, {scale:1}, 0);
     tl.to('.vidref', {width:0, duration:1, opacity:0, ease:"power2.in"}, 15);
+
+    tl.from('.info', {opacity:0, width: 0, duration:1, ease:"power2.out"}, 0);
+
+    let infoBefore = CSSRulePlugin.getRule(".info::before"); //get the rule
+    tl.fromTo(infoBefore, {scale: 3, duration:1, ease:Back.easeOut.config(1.7)}, {scale:1}, 0)
+    tl.to('.info', {width:0, duration:1, opacity:0, ease:"power2.in"}, 15);
 
     window.tl = tl;
 
